@@ -7,6 +7,7 @@ import {HiOutlineExternalLink} from 'react-icons/hi'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
 import SimilarJobsCard from '../SimilarJobsCard'
+import './index.css'
 
 const statusConst = {
   initial: 'INITIAL',
@@ -100,13 +101,16 @@ class JobItemDetails extends Component {
   }
 
   renderLoader = () => (
-    <div className="loader-container" data-testid="loader">
+    <div
+      className="loader-container job-item-details-loader"
+      data-testid="loader"
+    >
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
 
   renderFailureView = () => (
-    <div className="failure-container">
+    <div className="failure-container-lg">
       <img
         className="failure-img"
         src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
@@ -147,12 +151,12 @@ class JobItemDetails extends Component {
         <div className="job-item-details-container">
           <div className="logo-title-star-container">
             <img
-              className="company-logo"
+              className="company-logo-details company-logo"
               src={companyLogoUrl}
               alt="job details company logo"
             />
             <div className="title-star-container">
-              <h1 className="heading-300">{title}</h1>
+              <h1 className="heading-300 title-details">{title}</h1>
               <div className="star-container">
                 <AiFillStar className="star-icon" />
                 <p className="rating-text">{rating}</p>
@@ -177,15 +181,15 @@ class JobItemDetails extends Component {
           <hr className="ruler" />
 
           <div className="description-heading-visit-container">
-            <h1 className="heading-250">Description</h1>
+            <h1 className="heading-250 description-heading">Description</h1>
             <a className="visit-link-container" href={companyWebsiteUrl}>
               <p className="visit-text">Visit</p>
               <HiOutlineExternalLink className="visit-link-icon" />
             </a>
           </div>
-          <p className="para-150">{jobDescription}</p>
+          <p className="para-150 job-desc">{jobDescription}</p>
 
-          <h1 className="heading-200">Skills</h1>
+          <h1 className="skills">Skills</h1>
           <ul className="skills-list">
             {skills.map(eachSkill => (
               <li className="skill-item" key={eachSkill.name}>
@@ -199,9 +203,13 @@ class JobItemDetails extends Component {
             ))}
           </ul>
 
-          <h1 className="heading-200">Life at Company</h1>
+          <h1 className="heading-200 life-at-company-heading">
+            Life at Company
+          </h1>
           <div className="life-at-company-container">
-            <p className="para-150">{lifeAtCompany.description}</p>
+            <p className="para-150 life-at-company-para">
+              {lifeAtCompany.description}
+            </p>
             <img
               className="life-at-company-img"
               src={lifeAtCompany.imageUrl}
@@ -210,7 +218,7 @@ class JobItemDetails extends Component {
           </div>
         </div>
 
-        <h1 className="heading-300">Similar Jobs</h1>
+        <h1 className="heading-300 similar-jobs">Similar Jobs</h1>
         <ul className="similar-jobs-list">
           {similarJobs.map(eachJob => (
             <SimilarJobsCard key={eachJob.id} similarJobsItem={eachJob} />

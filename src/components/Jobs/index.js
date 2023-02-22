@@ -3,6 +3,8 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {BsSearch} from 'react-icons/bs'
 import Loader from 'react-loader-spinner'
+import {GiHamburgerMenu} from 'react-icons/gi'
+import {AiOutlineClose} from 'react-icons/ai'
 import Header from '../Header'
 import JobsList from '../JobsList'
 import FilterJobs from '../FilterJobs'
@@ -216,9 +218,25 @@ class Jobs extends Component {
   render() {
     const {employmentType, activeSalaryRangeId, hamBurgerExpanded} = this.state
     const HamBurgerClass = hamBurgerExpanded ? 'expand-menu' : ''
+    const hamClass = hamBurgerExpanded ? 'display-none' : ''
+    const closeClass = !hamBurgerExpanded ? 'display-none' : ''
 
     return (
       <div className="jobs-bg-container">
+        <button
+          className={`hamburger-btn ${hamClass}`}
+          type="button"
+          onClick={this.toggleMenu}
+        >
+          <GiHamburgerMenu className="hamburger-icon" />
+        </button>
+        <button
+          className={`close-btn ${closeClass}`}
+          type="button"
+          onClick={this.toggleMenu}
+        >
+          <AiOutlineClose className="close-icon" />
+        </button>
         <Header
           hamBurgerExpanded={hamBurgerExpanded}
           toggleMenu={this.toggleMenu}

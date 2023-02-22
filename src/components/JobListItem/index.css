@@ -6,6 +6,11 @@
   background-color: #272727;
   border-radius: 10px;
 }
+@media (min-width: 768px) {
+  .job-list-item {
+    padding: 2rem;
+  }
+}
 .logo-title-star-container {
   display: flex;
   align-items: center;
@@ -73,10 +78,10 @@
   color: white;
 }
 .para-150 {
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.4rem;
   font-weight: 400;
-  opacity: .9;
+  opacity: 0.9;
 }
 .job-description {
   color: white;

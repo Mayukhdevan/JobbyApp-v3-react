@@ -11,7 +11,8 @@
   min-height: 100vh;
 }
 .home-responsive-container {
-  padding: 1rem;
+    padding: 1rem;
+    padding-top: 7rem;
 }
 .home-heading {
   color: white;
@@ -67,6 +68,7 @@
   }
   .home-responsive-container {
     padding: 4rem;
+    padding-top: 9rem;
     width: 70%;
   }
   .home-heading {

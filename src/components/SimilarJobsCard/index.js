@@ -18,7 +18,7 @@ const SimilarJobsCard = props => {
 
   return (
     <Link to={`/jobs/${id}`} className="nav-links">
-      <li className="job-list-item">
+      <li className="job-list-item" id="similarJobListItem">
         <div className="logo-title-star-container">
           <img
             className="company-logo"
@@ -35,7 +35,7 @@ const SimilarJobsCard = props => {
         </div>
 
         <h1 className="heading-250">Description</h1>
-        <p className="para-150">{jobDescription}</p>
+        <p className="para-150 m-5">{jobDescription}</p>
 
         <div className="location-job-type-container">
           <div className="location-container">

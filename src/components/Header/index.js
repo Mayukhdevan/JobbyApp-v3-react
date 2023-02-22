@@ -1,38 +1,19 @@
 import './index.css'
 import Cookies from 'js-cookie'
 import {Link, withRouter} from 'react-router-dom'
-import {AiFillHome, AiOutlineClose} from 'react-icons/ai'
+import {AiFillHome} from 'react-icons/ai'
 import {BsFillBriefcaseFill} from 'react-icons/bs'
 import {FiLogOut} from 'react-icons/fi'
-import {GiHamburgerMenu} from 'react-icons/gi'
 
 const Header = props => {
-  const {toggleMenu, hamBurgerExpanded} = props
   const onLogout = () => {
     Cookies.remove('jwt_token')
     const {history} = props
     history.replace('/login')
   }
 
-  const hamClass = hamBurgerExpanded ? 'display-none' : ''
-  const closeClass = !hamBurgerExpanded ? 'display-none' : ''
-
   return (
     <div className="header-container">
-      <button
-        className={`hamburger-btn ${hamClass}`}
-        type="button"
-        onClick={toggleMenu}
-      >
-        <GiHamburgerMenu className="hamburger-icon" />
-      </button>
-      <button
-        className={`close-btn ${closeClass}`}
-        type="button"
-        onClick={toggleMenu}
-      >
-        <AiOutlineClose className="close-icon" />
-      </button>
       <Link to="/" className="nav-links logo-link">
         <img
           className="header-logo"
