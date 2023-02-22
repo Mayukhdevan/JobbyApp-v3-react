@@ -63,8 +63,8 @@ class UserProfile extends Component {
           src={userProfile.profileImageUrl}
           alt="profile"
         />
-        <h1 className="heading-150 user-profile-name">{userProfile.name}</h1>
-        <p className="short-bio">{userProfile.shortBio}</p>
+        <h1 className="heading-150 user-profile-name">Mayukh Devan Sahu</h1>
+        <p className="short-bio">MERN Full-Stack Developer</p>
       </div>
     )
   }
